@@ -12,30 +12,31 @@ import { SectionBackground } from "./section-background";
  */
 const Footer = () => {
   return (
-    <footer className="relative w-full text-jh-white overflow-hidden">
+    <footer className="relative w-full text-jh-white overflow-hidden min-h-[60vh]" style={{ background: 'transparent' }}>
       {/* Background with proper fade */}
       <div className="absolute inset-0 z-0" aria-hidden>
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
           style={{
             backgroundImage: "url(/bg.png)",
             backgroundPosition: "center bottom",
+            backgroundSize: "cover",
           }}
         />
-        {/* Overlay: solid at top, fades to reveal bg image */}
+        {/* Overlay: only fades from top, bottom 40% is completely transparent */}
         <div
           className="absolute inset-0"
           style={{
-            background: "linear-gradient(to bottom, rgba(26,9,48,1) 0%, rgba(26,9,48,0.95) 15%, rgba(26,9,48,0.85) 30%, rgba(26,9,48,0.7) 50%, rgba(26,9,48,0.4) 80%, rgba(26,9,48,0.2) 100%)",
+            background: "linear-gradient(to bottom, rgba(26,9,48,1) 0%, rgba(26,9,48,0.9) 15%, rgba(26,9,48,0.7) 30%, rgba(26,9,48,0.4) 45%, rgba(26,9,48,0.1) 55%, transparent 60%)",
           }}
         />
       </div>
       
-      <SectionBackground variant="grid" className="opacity-30" />
-      <SectionBackground variant="glow-bottom" className="opacity-20" />
+      <SectionBackground variant="grid" className="opacity-30" style={{ bottom: 0 }} />
+      <SectionBackground variant="glow-bottom" className="opacity-20" style={{ bottom: 0 }} />
 
       {/* Main Footer Content */}
-      <div className="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-0">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 lg:gap-12">
           {/* Left Section: Contact & Social */}
           <div className="flex flex-col gap-6 flex-1">
@@ -110,30 +111,6 @@ const Footer = () => {
                 All rights reserved. EIN: 81-2908499
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Bottom Brand Bar - Properly contained */}
-      <div className="relative z-10 w-full bg-jh-purple-alt/95 backdrop-blur-sm border-t border-jh-purple-accent/30">
-        <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 overflow-hidden">
-          <div className="flex justify-center items-center gap-2 sm:gap-3 md:gap-4">
-            {"HACK UNITED".split("").map((letter, i) => (
-              <motion.span
-                key={i}
-                className="font-display text-jh-white drop-shadow-[2px_2px_0_#9937FE] leading-none"
-                style={{ 
-                  fontSize: "clamp(1.5rem, 5vw, 4rem)",
-                  flexShrink: 0,
-                }}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05, duration: 0.3 }}
-              >
-                {letter === " " ? "\u00A0" : letter}
-              </motion.span>
-            ))}
           </div>
         </div>
       </div>

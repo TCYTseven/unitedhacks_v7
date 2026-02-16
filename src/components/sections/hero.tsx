@@ -108,7 +108,7 @@ const HeroSection = () => {
             variants={item}
             className="text-jh-white/90 text-base sm:text-lg font-nunito mb-10 max-w-xl"
           >
-            Build, learn, and compete with thousands of participants worldwide. $50K+ in prizes, mentors, and workshops.
+            Build, learn, and compete with thousands of participants worldwide. $25K+ in prizes, mentors, and workshops.
           </motion.p>
 
           <motion.div variants={item} className="flex flex-col sm:flex-row gap-4 items-center justify-center">

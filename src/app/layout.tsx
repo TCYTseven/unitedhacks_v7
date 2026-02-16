@@ -5,12 +5,9 @@ import ErrorReporter from "@/components/ErrorReporter";
 export const metadata: Metadata = {
   title: "United Hacks V7",
   description: "The world's largest online student-led hackathon. Join participants from around the world for an epic weekend of building and learning.",
-  icons: [
-    { url: "/favicons/favicon.ico", sizes: "any" },
-    { url: "/favicons/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-    { url: "/favicons/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-    { url: "/favicons/apple-touch-icon.png", sizes: "180x180", type: "image/png", rel: "apple-touch-icon" },
-  ],
+  icons: {
+    icon: "/favihavy.png",
+  },
 };
 
 export default function RootLayout({
@@ -33,10 +30,7 @@ export default function RootLayout({
             `,
           }}
         />
-        <link rel="icon" href="/favicons/favicon.ico" sizes="any" />
-        <link rel="icon" href="/favicons/favicon-16x16.png" type="image/png" sizes="16x16" />
-        <link rel="icon" href="/favicons/favicon-32x32.png" type="image/png" sizes="32x32" />
-        <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" sizes="180x180" />
+        <link rel="icon" href="/favihavy.png" type="image/png" />
         <link rel="manifest" href="/favicons/site.webmanifest" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
