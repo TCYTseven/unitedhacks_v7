@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { SectionBackground } from "./section-background";
 
 /**
- * FAQ Accordion Item Component
+ * FAQ Accordion Item Component test
  * Based on the design specs: white background, rounded-lg, Jersey font for title.
  */
 const FAQItem = ({ question, answer }: { question: string; answer?: string }) => {
