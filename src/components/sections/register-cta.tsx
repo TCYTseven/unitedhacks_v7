@@ -58,17 +58,24 @@ const RegisterCTA = () => {
             <ul className="list-none space-y-3 mb-8 text-left font-nunito text-[#300060] text-base sm:text-lg">
               <li className="flex items-center gap-3">
                 <span className="text-[#290F3F] font-bold">•</span>
-                Sign up on Devpost
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="text-[#290F3F] font-bold">•</span>
-                <a
-                  href="https://discord.gg/YyPDpmDZke"
+                Sign up on <a
+                  href="https://unitedhacksv7.devpost.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-jh-purple-accent hover:underline font-semibold"
                 >
-                  Join our Discord Server
+                  Devpost
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="text-[#290F3F] font-bold">•</span>
+                Join our <a
+                  href="https://discord.gg/hackunited"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-jh-purple-accent hover:underline font-semibold"
+                >
+                  Discord Server
                 </a>
               </li>
             </ul>

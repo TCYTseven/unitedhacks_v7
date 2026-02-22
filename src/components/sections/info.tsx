@@ -16,16 +16,16 @@ const infoCards = [
   {
     title: "Judging Panel",
     body: "Our hackathon is evaluated by industry professionals spanning Engineering, Software Engineering, Business, and the medical industry. These experienced judges will review your projects based on creativity, technical complexity, practicality, design, and presentation. They bring years of real-world experience and will provide valuable feedback to help you grow as a developer.",
-    cta: { label: "View judges", href: "https://www.hackunited.org/judges" },
+    cta: { label: "View judges", href: "https://unitedhacksv7.devpost.com/judges" },
   },
   {
     title: "Schedule",
-    body: "Opening Ceremony: January 16th, 2026 at 7:00pm EST\nSubmissions Due: January 18th, 2026 at 12:00pm EST\nClosing Ceremony: January 18th, 2026 at 8:00 PM EST\n\nWorkshop schedule will be posted in our discord!\n\nMake sure to attend the opening ceremony to learn about the theme track and get important updates. All live streams will be linked in our Discord server.",
+    body: "Opening Ceremony: July 10th, 2026 at 7:00pm EST\nSubmissions Due: July 12th, 2026 at 12:00pm EST\nClosing Ceremony: July 12th, 2026 at 8:00 PM EST\n\nWorkshop schedule will be posted in our discord!\n\nMake sure to attend the opening ceremony to learn about the theme track and get important updates. All live streams will be linked in our Discord server.",
   },
   {
     title: "Rules",
     body: "• You must be 13+, all ages welcome—students and professionals alike.\n• Projects must be original and built during the hackathon.\n• Teams up to 4 people.\n• You must submit a demo video, GitHub repository, and project description.\n• Follow our code of conduct and maintain a respectful, inclusive environment for all participants.",
-   
+    cta: { label: "View code of conduct", href: "https://static.mlh.io/docs/mlh-code-of-conduct.pdf" },
   },
   {
     title: "Theme",
@@ -38,6 +38,7 @@ const infoCards = [
   {
     title: "Networking",
     body: "Network with mentors, professionals, and fellow hackers for future collaborations and opportunities. Connect with like-minded individuals, meet potential teammates for future projects, and build relationships with industry professionals. Our Discord community is active year-round, creating lasting connections beyond the hackathon weekend.",
+    cta: { label: "Join Discord", href: "https://discord.gg/hackunited" },
   },
 ];
 

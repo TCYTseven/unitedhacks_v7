@@ -19,14 +19,14 @@ const AboutSection = () => {
 
       {/* Section Title with Retro Shadow Effect */}
       <motion.div
-        className="relative mb-12 sm:mb-16 md:mb-20 text-center z-10"
+        className="relative mb-12 sm:mb-16 md:mb-20 text-center z-10 w-full px-2"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.5 }}
       >
           <h2 
-            className="absolute top-0.5 sm:top-1 left-0.5 sm:left-1 text-4xl sm:text-5xl md:text-7xl font-bold font-jersey text-[#9937FE] opacity-80 select-none whitespace-nowrap"
+            className="absolute top-0.5 sm:top-1 left-1/2 -translate-x-1/2 text-4xl sm:text-5xl md:text-7xl font-bold font-jersey text-[#9937FE] opacity-80 select-none whitespace-nowrap"
             aria-hidden="true"
           >
             About Hack United
@@ -44,7 +44,7 @@ const AboutSection = () => {
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.5, delay: 0.1 }}
       >
-          <div className="relative rounded-xl overflow-hidden shadow-[8px_8px_0px_#290F3F] border-[4px] border-[#290F3F]">
+          <div className="relative rounded-xl overflow-hidden shadow-[8px_8px_0px_#290F3F] border-[4px] border-[#290F3F] w-full max-w-full">
             {/* Title Bar */}
             <div className="bg-[#3B1C5B] py-3 px-4 border-b-2 border-[#290F3F] flex items-center justify-start gap-2">
               <div className="w-3 h-3 bg-[#FF5F56] rounded-full border border-[rgba(0,0,0,0.2)]"></div>
@@ -54,11 +54,11 @@ const AboutSection = () => {
 
             {/* Content Area - solid background (no gradient) */}
             <div 
-              className="p-6 sm:p-8 md:p-12 min-h-[300px] bg-[#E8C4F0]"
+              className="p-4 sm:p-6 md:p-8 lg:p-12 min-h-[300px] bg-[#E8C4F0] overflow-hidden"
             >
               <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-10">
                 {/* Text Content */}
-                <div className="w-full md:w-[60%] text-left">
+                <div className="w-full md:w-[60%] text-left min-w-0">
                   <p className="text-sm sm:text-base md:text-lg font-nunito text-[#300060] leading-relaxed mb-6">
                     Hack United is a nonprofit organization that hosts United Hacks. In the past, we have hosted 6 iterations of United Hacks, with over 3,750+ combined participants from over 50 countries. Our hackathons are different because we emphasize soft skills often overlooked in the tech world.
                   </p>
@@ -69,7 +69,7 @@ const AboutSection = () => {
                       href="https://hackunited.org" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-[#300060] text-white font-jersey text-2xl rounded-sm hover:bg-[#4C0973] transition-colors"
+                      className="inline-flex items-center gap-2 px-4 sm:px-6 py-3 bg-[#300060] text-white font-jersey text-lg sm:text-xl md:text-2xl rounded-sm hover:bg-[#4C0973] transition-colors break-words"
                     >
                       Learn More About Hack United
                     </a>
@@ -77,7 +77,7 @@ const AboutSection = () => {
                 </div>
 
               {/* Image Container */}
-              <div className="w-full sm:w-[50%] md:w-[32%] flex-shrink-0">
+              <div className="w-full sm:w-[50%] md:w-[32%] flex-shrink-0 min-w-0">
                 <div className="relative aspect-[3/2] w-full rounded-xl overflow-hidden shadow-lg border-2 border-[#300060]/20">
                   <Image
                     src="/logo_main.webp"
