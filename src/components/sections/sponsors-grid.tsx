@@ -1,15 +1,70 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { SectionBackground } from "./section-background";
 
+type Sponsor = {
+  name: string;
+  logo: string;
+  url?: string;
+  padding?: string;
+  dark?: boolean;
+};
+
+const sponsors: Sponsor[] = [
+  {
+    name: "Devitus",
+    logo: "/devitus-rectangle-transparent.svg",
+    url: "https://devitus.com",
+    padding: "p-6",
+    dark: true,
+  },
+  {
+    name: "Art of Problem Solving",
+    logo: "/aops.png",
+    url: "https://artofproblemsolving.com",
+    padding: "p-6",
+  },
+  {
+    name: "Cache Labs",
+    logo: "/cachelabs.png",
+    url: "https://cachelabs.io",
+    padding: "p-3",
+  },
+  {
+    name: "CodeCrafters",
+    logo: "/codecrafters.png",
+    url: "https://codecrafters.io",
+    padding: "p-4",
+  },
+  {
+    name: "Featherless",
+    logo: "/featherless.jpeg",
+    url: "https://featherless.ai",
+    padding: "p-8",
+  },
+  {
+    name: "Interview Cake",
+    logo: "/interviewcake.png",
+    url: "https://www.interviewcake.com",
+    padding: "p-4",
+  },
+  {
+    name: ".xyz",
+    logo: "/xyz.png",
+    url: "https://gen.xyz",
+    padding: "p-3",
+  },
+];
+
+const PLACEHOLDER_COUNT = 5;
+
 const SponsorsGrid = () => {
-  // Generate placeholder sponsor slots - all showing "Coming Soon"
-  const sponsorSlots = Array.from({ length: 12 }, (_, i) => ({
-    padding: i < 3 ? "p-12" : i < 7 ? "p-4" : "p-2"
+  const placeholderSlots = Array.from({ length: PLACEHOLDER_COUNT }, (_, i) => ({
+    padding: i < 2 ? "p-12" : i < 6 ? "p-4" : "p-2",
   }));
-  
 
   return (
     <div id="sponsors" className="relative flex flex-col items-center justify-center bg-jh-purple-deep text-jh-white py-16 px-4 overflow-hidden">
@@ -42,7 +97,40 @@ const SponsorsGrid = () => {
           transition={{ duration: 0.5 }}
         >
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
-            {sponsorSlots.map((slot, idx) => (
+            {sponsors.map((sponsor) => {
+              const card = (
+                <div
+                  className={`shadow-lg rounded-lg flex items-center justify-center transition-all duration-300 ease-in-out min-h-[120px] md:min-h-[160px] ${sponsor.padding ?? "p-4"} ${
+                    sponsor.dark
+                      ? "bg-jh-purple-deep border border-jh-purple-accent/30 hover:border-jh-purple-accent/60"
+                      : "bg-white"
+                  }`}
+                >
+                  <Image
+                    src={sponsor.logo}
+                    alt={`${sponsor.name} logo`}
+                    width={200}
+                    height={80}
+                    className="w-full h-auto max-h-16 md:max-h-20 object-contain"
+                  />
+                </div>
+              );
+
+              return sponsor.url ? (
+                <a
+                  key={sponsor.name}
+                  href={sponsor.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block hover:scale-[1.02] transition-transform"
+                >
+                  {card}
+                </a>
+              ) : (
+                <div key={sponsor.name}>{card}</div>
+              );
+            })}
+            {placeholderSlots.map((slot, idx) => (
               <div
                 key={idx}
                 className={`bg-white shadow-lg rounded-lg flex items-center justify-center transition-all duration-300 ease-in-out min-h-[120px] md:min-h-[160px] ${slot.padding}`}
